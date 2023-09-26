@@ -2,11 +2,16 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 
 function Form() {
-  const { register, handleSubmit, formState } = useForm();
+  const { register, handleSubmit, formState, reset } = useForm({
+    defaultValues:{
+      username: 'test user'
+    }
+  });
   const { errors } = formState
 
   const onSubmit = (data) => {
     console.log("Submited Data is", data);
+    reset();
   }
 
   return (
