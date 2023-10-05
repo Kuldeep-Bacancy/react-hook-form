@@ -7,6 +7,7 @@ function Form() {
       username: 'test user',
       email: '',
       channel: '',
+      dob: '',
       social: {
         twitter: '',
         facebook: ''
@@ -43,6 +44,10 @@ function Form() {
         <label htmlFor="channel">Channel</label>
         <input type="text" id="channel" {...register("channel", { required: 'Channel is required!' } )} />
         <p className='error'>{errors.channel?.message}</p>
+
+        <label htmlFor="dob">Date of Birth</label>
+        <input type="date" id="dob" {...register("dob", { required: 'Date of birth is required!' })} />
+        <p className='error'>{errors.dob?.message}</p>
         
         <label htmlFor="twitter">Twitter</label>
         <input type="text" id="twitter" {...register("social.twitter", { required: 'Twitter is required!' })} />
